@@ -15,7 +15,6 @@ This webpage is for educational purposes and the stripe functionality will only 
 * [1.**UX**](#1-ux)
     * [**User Stories**](#user-stories)
     * [**Wireframes**](#wireframes)
-    * [**Sitemap**](#sitemap)
     * [**Structure**](#structure)
     * [**Design**](#design)
 * [2.**Database Design**](#2-database-design)
