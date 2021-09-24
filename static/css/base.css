@@ -44,11 +44,16 @@ p {
     color: #8FD0CA;
 }
 
-
-
-
 .border-blue {
     border: 1.5px #8FD0CA !important;
+}
+
+.nav-row {
+    background-color: #8FD0CA;
+}
+
+.subs-link {
+    text-transform: uppercase;
 }
 
 .intro-img {
@@ -56,6 +61,7 @@ p {
     padding: 5px;
     margin: 5px;
 }
+
 /* ----------------------------------------------- Media Queries */
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
