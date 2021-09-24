@@ -1,0 +1,80 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: blanchedalmond;
+}
+
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+h1 {
+    font-family: 'Syncopate', sans-serif;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+}
+
+.logo-font {
+    text-transform: uppercase;
+    font-family: 'Syncopate', sans-serif;
+}
+
+.main-logo-link {
+    width: fit-content;
+    color: black;
+}
+
+.main-logo-link:hover {
+    color: #8FD0CA;
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover {
+    color: #8FD0CA;
+}
+
+
+
+
+.border-blue {
+    border: 1.5px #8FD0CA !important;
+}
+
+.intro-img {
+    position: relative;
+    padding: 5px;
+    margin: 5px;
+}
+/* ----------------------------------------------- Media Queries */
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
+  
+  /* fixed top navbar only on medium and up */
+  @media (min-width: 992px) {
+      .fixed-top-desktop-only {
+          position: fixed;
+          top: 0;
+          right: 0;
+          left: 0;
+          z-index: 1030;
+      }
+  
+      .header-container {
+          padding-top: 164px;
+      }
+  }
