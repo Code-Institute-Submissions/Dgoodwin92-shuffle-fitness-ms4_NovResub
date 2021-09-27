@@ -1,20 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-  <div class="container header-container">
-    <div class="row">
-      <div class="col"></div>
-    </div>
-  </div>
-{% endblock %}
-
 {% block content %}
-<div class="container h-100">
-    <div class="row h-100">
-        <div class="col-12 my-auto">
-            <h1 class="display-1 text-center">Shuffle Fitness</h1>
-        </div>
+<div class="hero-image">
+    <div class="hero-contents">
+      <!--<h1 class="display-1 text-center">Shuffle Fitness</h1> -->
     </div>
 </div>
 <div class="container">
@@ -25,7 +15,7 @@
             <p>shdfwohgoihfdsoghsdlgkhwriah qwioehggpgihdspgi</p>
         </div>
         <div class="col-8">
-            <img src="{{ MEDIA_URL }}fitness-man.jpg" alt="Man exercising with a weight" class="intro-img" width="300px" height="300px">
+            <img src="{{ MEDIA_URL }}fitness-man.jpg" alt="Man exercising with a weight" class="intro-img float-right" width="300px" height="300px">
         </div>
     </div>
     <hr>
@@ -33,26 +23,29 @@
         <div class="col">
             <div class="card-group">
                 <div class="card">
-                  <img class="card-img-top" src="..." alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                  <img class="card-img-top" src="{{ MEDIA_URL }}fitness-img.jpg" alt="Card image cap">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Fitness</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="#" class="btn btn-dark">Go somewhere</a>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                   </div>
                 </div>
                 <div class="card">
-                  <img class="card-img-top" src="..." alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                  <img class="card-img-top" src="{{ MEDIA_URL }}nutrition-img.jpg" alt="Card image cap">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Nutrition</h5>
                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-dark">Go somewhere</a>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                   </div>
                 </div>
                 <div class="card">
-                  <img class="card-img-top" src="..." alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                  <img class="card-img-top" src="{{ MEDIA_URL }}brain-img.jpg" alt="Card image cap">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Mental</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <a href="#" class="btn btn-dark">Go somewhere</a>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                   </div>
                 </div>
