@@ -61,8 +61,6 @@ To create my wireframes I used a website called MockFlow. The JPEG of the wirefr
 ![Wireframe Home Image](readme-img/wireframe-img/sf-home.jpg)
 #### Membership/Product Page
 ![Wireframe Memberships Image ](readme-img/wireframe-img/sf-membership.jpg)
-#### Memberships Info Page
-![Wireframe Memberships Info](readme-img/wireframe-img/sf-member-page.jpg)
 #### Login Page
 ![Wireframe Login Page](readme-img/wireframe-img/sf-login.jpg)
 #### Profile Page

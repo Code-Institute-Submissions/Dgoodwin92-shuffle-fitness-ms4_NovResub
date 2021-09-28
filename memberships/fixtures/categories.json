@@ -1,0 +1,25 @@
+[{
+    "pk": 1,
+    "model": "memberships.category",
+    "fields": {
+        "name": "fitness",
+        "display_name": "Fitness"
+    }
+},
+{
+    "pk": 2,
+    "model": "memberships.category",
+    "fields": {
+        "name": "nutrition",
+        "display_name": "Nutrition"
+    }
+},
+{
+    "pk": 3,
+    "model": "memberships.category",
+    "fields": {
+        "name": "mental_strength",
+        "display_name": "Mental Strength"
+    }
+}
+]
