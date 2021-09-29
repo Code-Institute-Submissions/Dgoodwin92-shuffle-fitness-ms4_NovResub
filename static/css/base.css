@@ -1,3 +1,4 @@
+/* ------------------------------------------------ Body */
 html {
     height: 100%;
 }
@@ -6,40 +7,15 @@ html {
     padding: 0;
 }
 
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
 h1 {
     font-family: 'Syncopate', sans-serif;
-}
-
-.hero-image {
-    background-image: url('/media/hero-img.jpg');
-    height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-.hero-contents {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
 }
 
 p {
     font-family: 'Raleway', sans-serif;
 }
 
+/* ------------------------------------------------- Nav Bar & Logo Font */
 .logo-font {
     text-transform: uppercase;
     font-family: 'Syncopate', sans-serif;
@@ -66,16 +42,36 @@ p {
     border: 1.5px #8FD0CA !important;
 }
 
-.nav-row {
-    background-color: #8FD0CA;
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
-.subs-link {
+
+/* --------------------------------------------------------- Hero Image & Home page */
+
+.hero-image {
+    background-image: url('/media/hero-img.jpg');
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.about-title {
     text-transform: uppercase;
+    font-family: 'Syncopate', sans-serif;
 }
 
-.intro-img {
-    padding: 5px;
+.about-us {
+    border-style: solid;
+    border-color: #8FD0CA;
+    text-align: center;
+    padding: 10px;
     margin: 5px;
 }
 
@@ -86,15 +82,35 @@ p {
 }
 
 /* ----------------------------------------------- Footer */
-.footer-container {
-    background-color:  #8FD0CA;
-    bottom: 0;
-    height: 15rem;
+footer {
+    background-color: #8FD0CA;
+    padding-top: 5px;
+    margin-top: 5px;
 }
 
 .footer-contact {
-    flex-direction: column;
-    margin: 5rem 0;
+    text-align: center;
+    color: black;
+}
+
+.contact-us {
+    color: black;
+}
+
+.social-media-links {
+    list-style-type: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.footer-social {
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.social-link {
+    color: black;
 }
 
 /* ----------------------------------------------- Media Queries */
