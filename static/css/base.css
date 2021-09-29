@@ -3,6 +3,10 @@ html {
     height: 100%;
 }
 
+body {
+    height: calc(100vh - 164px);
+}
+
 .container-fluid {
     padding: 0;
 }
@@ -136,6 +140,16 @@ footer {
           padding-top: 164px;
       }
   }
+
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+}
 
 .membership-title {
     font-family: 'Syncopate', sans-serif;

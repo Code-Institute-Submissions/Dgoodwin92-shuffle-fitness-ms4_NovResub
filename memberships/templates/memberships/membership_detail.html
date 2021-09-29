@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h2>{{ membership.name }}</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 col-md-4 offset-lg-2">
+            <div class="mb-5 mt-md-5">
+                <h3>{{ membership.name }}</h3>
+                {% if membership.rating %}
+                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ membership.rating }} / 5</small>
+                {% else %}
+                <small class="text-muted">No Rating Available</small>
+                {% endif %}
+                <p>{{ membership.description }}</p>
+                <h5>Price Choices:</h5>
+                <p>£{{ membership.price_yearly }} Yearly</p>
+                <p>£{{ membership.price_quarterly }} Quarterly</p>
+                <p>£{{ membership.price_monthly }} Monthly</p>
+            </div>
+            </div>
+        <div class="col-6 col-md-4">
+            <div class="image-container my-10">
+                {% if membership.image %}
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ membership.image }}"
+                        alt="{{ membership.name }}">
+                {% else %}
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ membership.name }}">
+                {% endif %}
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
