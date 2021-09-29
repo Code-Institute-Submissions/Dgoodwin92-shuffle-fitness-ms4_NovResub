@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Memberships, Category
+from .models import Membership, Category
 
 
 class MembershipsAdmin(admin.ModelAdmin):
@@ -24,4 +24,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Memberships, MembershipsAdmin)
+admin.site.register(Membership, MembershipsAdmin)

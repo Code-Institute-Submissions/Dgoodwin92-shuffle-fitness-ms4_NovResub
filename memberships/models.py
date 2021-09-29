@@ -14,7 +14,7 @@ class Category(models.Model):
         return self.display_name
 
 
-class Memberships(models.Model):
+class Membership(models.Model):
     category = models.ForeignKey('Category',
                                 null=True,
                                 blank=True,
