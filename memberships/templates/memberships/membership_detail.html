@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-<h2>{{ membership.name }}</h2>
 <div class="container-fluid">
     <div class="row">
         <div class="col-6 col-md-4 offset-lg-2">
@@ -21,12 +28,12 @@
             </div>
             </div>
         <div class="col-6 col-md-4">
-            <div class="image-container my-10">
+            <div class="image-container">
                 {% if membership.image %}
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ membership.image }}"
+                    <img class="mx-auto d-block membership-img" src="{{ MEDIA_URL }}{{ membership.image }}"
                         alt="{{ membership.name }}">
                 {% else %}
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ membership.name }}">
+                    <img class="mx-auto d-block membership-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ membership.name }}">
                 {% endif %}
             </div>
         </div>
