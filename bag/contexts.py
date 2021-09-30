@@ -5,6 +5,7 @@ def bag_contents(request):
     bag_items = []
     total = 0
     membership_count = 0
+    bag = request.session.get('bag', {})
 
     grand_total = total
 

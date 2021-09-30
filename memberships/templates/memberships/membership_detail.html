@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -26,35 +26,43 @@
                 <p>£{{ membership.price_quarterly }} Quarterly</p>
                 <p>£{{ membership.price_monthly }} Monthly</p>
             </div>
-            </div>
+        </div>
         <div class="col-6 col-md-4">
             <div class="image-container">
                 {% if membership.image %}
-                    <img class="mx-auto d-block membership-img" src="{{ MEDIA_URL }}{{ membership.image }}"
-                        alt="{{ membership.name }}">
+                <img class="mx-auto d-block membership-img" src="{{ MEDIA_URL }}{{ membership.image }}"
+                    alt="{{ membership.name }}">
                 {% else %}
-                    <img class="mx-auto d-block membership-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ membership.name }}">
+                <img class="mx-auto d-block membership-img" src="{{ MEDIA_URL }}noimage.jpg"
+                    alt="{{ membership.name }}">
                 {% endif %}
             </div>
-            <form class="form" action="" method="POST">
+            <form class="form" action="{% url 'add_to_bag' membership.id %}" method="POST">
                 {% csrf_token %}
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
-                      <label class="mr-sm-2" for="inlineFormCustomSelect">Payment Options</label>
-                      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                        <option selected>Choose...</option>
-                        <option value="£{{ membership.price_yearly }}">Yearly</option>
-                        <option value="£{{ membership.price_quarterly}}">Quarterly</option>
-                        <option value="£{{ membership.price_monthly }}">Monthly</option>
-                      </select>
+                        <label class="mr-sm-2" for="paymentOptionSelect">Payment Options</label>
+                        <input class="form-control qty_input" type="hidden" name="quantity" value="1" data-item_id="{{ membership.id }}" id="id_qty_{{ membership.id }}">
+                        <select class="custom-select mr-sm-2" id="paymentOptionSelect">
+                            <option selected>Choose...</option>
+                            <option value="{{ membership.price_yearly }}">£{{ membership.price_yearly }} Yearly</option>
+                            <option value="{{ membership.price_quarterly }}">£{{ membership.price_quarterly}} Quarterly</option>
+                            <option value="{{ membership.price_monthly }}">£{{ membership.price_monthly }} Monthly</option>
+                        </select>
                     </div>
                     <div class="col-auto my-1">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </div>
+                        <input type="submit" class="btn btn-dark" value="Add to Bag">
                     </div>
+                    <div class="col-12">
+                        <a href="{% url 'memberships' %}" class="btn btn-outline-dark text-center">
+                            <p>Keep Looking <i class="fas fa-arrow-right"></i></p>
+                        </a>
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </div>
             </form>
         </div>
-        </div>
     </div>
+</div>
 </div>
 {% endblock %}
