@@ -36,6 +36,23 @@
                     <img class="mx-auto d-block membership-img" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ membership.name }}">
                 {% endif %}
             </div>
+            <form class="form" action="" method="POST">
+                {% csrf_token %}
+                <div class="form-row align-items-center">
+                    <div class="col-auto my-1">
+                      <label class="mr-sm-2" for="inlineFormCustomSelect">Payment Options</label>
+                      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <option selected>Choose...</option>
+                        <option value="£{{ membership.price_yearly }}">Yearly</option>
+                        <option value="£{{ membership.price_quarterly}}">Quarterly</option>
+                        <option value="£{{ membership.price_monthly }}">Monthly</option>
+                      </select>
+                    </div>
+                    <div class="col-auto my-1">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+            </form>
         </div>
         </div>
     </div>
