@@ -21,10 +21,9 @@
                 <small class="text-muted">No Rating Available</small>
                 {% endif %}
                 <p>{{ membership.description }}</p>
-                <h5>Price Choices:</h5>
-                <p>£{{ membership.price_yearly }} Yearly</p>
-                <p>£{{ membership.price_quarterly }} Quarterly</p>
-                <p>£{{ membership.price_monthly }} Monthly</p>
+                <h5>Price:</h5>
+                <p>£{{ membership.price }}</p>
+                
             </div>
         </div>
         <div class="col-6 col-md-4">
@@ -40,16 +39,6 @@
             <form class="form" action="{% url 'add_to_bag' membership.id %}" method="POST">
                 {% csrf_token %}
                 <div class="form-row align-items-center">
-                    <div class="col-auto my-1">
-                        <label class="mr-sm-2" for="paymentOptionSelect">Payment Options</label>
-                        <input class="form-control qty_input" type="hidden" name="quantity" value="1" data-item_id="{{ membership.id }}" id="id_qty_{{ membership.id }}">
-                        <select class="custom-select mr-sm-2" id="paymentOptionSelect">
-                            <option selected>Choose...</option>
-                            <option value="{{ membership.price_yearly }}">£{{ membership.price_yearly }} Yearly</option>
-                            <option value="{{ membership.price_quarterly }}">£{{ membership.price_quarterly}} Quarterly</option>
-                            <option value="{{ membership.price_monthly }}">£{{ membership.price_monthly }} Monthly</option>
-                        </select>
-                    </div>
                     <div class="col-auto my-1">
                         <input type="submit" class="btn btn-dark" value="Add to Bag">
                     </div>

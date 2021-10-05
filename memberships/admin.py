@@ -6,9 +6,7 @@ class MembershipsAdmin(admin.ModelAdmin):
     list_display = (
         'category',
         'name',
-        'price_yearly',
-        'price_monthly',
-        'price_quarterly',
+        'price',
         'rating',
         'image',
     )
