@@ -20,7 +20,56 @@
         <div class="col">
             {% if bag_items %}
             <div class="table-responsive">
-                {{ bag_items }}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Membership Info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                          </tr>
+                    </thead>
+
+                    {% for membership in bag_items %}
+                        <tr>
+                            <td class="p-3 w-25">
+                                <img class="img-fluid" src="{{ MEDIA_URL }}{{ membership.membership.image }}">
+                            </td>
+                            <td class="py-3">
+                                <p>{{ membership.membership.name }}</p>
+                                <p class="small text-muted">{{ membership.membership.membership_id }}</p>
+                            </td>
+                            <td class="py-3">
+                                <p>£{{ membership.membership.price }}</p>
+                            </td>
+                            <td class="py-3">
+                                <p>{{ membership.quantity }}</p>
+                            </td>
+                            <td class="py-3">
+                                <p>£{{ membership.membership.price }}</p>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td>
+                            <h4>Grand Total: £{{ grand_total|floatformat:2 }}</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-right">
+                            <a href="{% url 'memberships' %}" class="btn btn-dark">
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                            <a href="" class="btn btn-outline-dark">
+                                <span class="text-uppercase">Secure Checkout</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
             </div>
                 {% else %}
                 <p>Your bag is empty</p>
