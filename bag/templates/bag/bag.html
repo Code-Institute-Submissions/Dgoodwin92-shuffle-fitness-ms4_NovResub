@@ -87,7 +87,7 @@
         var csrfToken = "{{ csrf_token }}";
         var membershipId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${membershipId}/`;
-        var data = {'casrfmiddlewaretoken': csrfToken};
+        var data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)
          .done(function() {

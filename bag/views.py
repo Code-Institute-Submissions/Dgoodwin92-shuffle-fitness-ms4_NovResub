@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+
+from memberships.models import Membership
 
 
 def view_bag(request):
@@ -27,14 +29,14 @@ def add_to_bag(request, membership_id):
 def remove_from_bag(request, membership_id):
     """ Remove memberships from the bag """
     try:
+        membership = get_object_or_404(Membership, pk=membership_id)
         bag = request.session.get('bag', {})
         
-        if quantity > 0:
-            bag.pop(membership_id)
+        bag.pop(membership_id)
 
         request.session['bag'] = bag
         return HttpResponse(status=200)
 
     except Exception as e:
         return HttpResponse(status=500)
-    
+       
