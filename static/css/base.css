@@ -148,7 +148,8 @@ footer {
     width: 30rem;
 }
 
-.btn-outline-dark {
+.remove-item {
+    cursor: pointer;
 }
 
 
