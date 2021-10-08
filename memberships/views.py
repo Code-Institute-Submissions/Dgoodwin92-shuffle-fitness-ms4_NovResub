@@ -32,7 +32,7 @@ def membership_detail(request, membership_id):
     """ A view to show an individual memberships """
 
     membership = get_object_or_404(Membership, pk=membership_id)
-
+    
     context = {
         'membership': membership,
     }

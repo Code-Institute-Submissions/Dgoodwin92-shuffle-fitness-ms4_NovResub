@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
-
+from django.contrib import messages
 from memberships.models import Membership
 
 
@@ -12,6 +12,7 @@ def view_bag(request):
 def add_to_bag(request, membership_id):
     """ Add a membership to the shopping bag """
 
+    membership = Membership.objects.get(pk=membership_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
@@ -20,6 +21,7 @@ def add_to_bag(request, membership_id):
         bag[membership_id] += quantity
     else:
         bag[membership_id] = quantity
+        messages.success(request, f'Added {membership.name} to your bag')
 
     request.session['bag'] = bag
     

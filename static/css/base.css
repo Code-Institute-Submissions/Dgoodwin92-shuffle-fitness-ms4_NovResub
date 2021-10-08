@@ -157,6 +157,23 @@ footer {
     margin: 2px;
 }
 
+/* ------------------------------------ bootstrap toasts */
+
+.message-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
 /* ----------------------------------------------- Media Queries */
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
