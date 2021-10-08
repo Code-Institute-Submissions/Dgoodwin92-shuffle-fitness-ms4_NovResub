@@ -152,6 +152,10 @@ footer {
     cursor: pointer;
 }
 
+.card {
+    padding: 3px;
+    margin: 2px;
+}
 
 /* ----------------------------------------------- Media Queries */
 /* Slightly larger container on xl screens */
