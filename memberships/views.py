@@ -16,7 +16,6 @@ def all_memberships(request):
             if not query:
                 messages.error(request, "You did not enter any search criteria!")
                 return redirect(reverse('memberships'))
-            
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             memberships = memberships.filter(queries)
 
@@ -32,10 +31,9 @@ def membership_detail(request, membership_id):
     """ A view to show an individual memberships """
 
     membership = get_object_or_404(Membership, pk=membership_id)
-    
+
     context = {
         'membership': membership,
     }
 
     return render(request, 'memberships/membership_detail.html', context)
-    

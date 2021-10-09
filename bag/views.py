@@ -4,8 +4,10 @@ from memberships.models import Membership
 
 
 def view_bag(request):
-    """ A view to return the bag contents page """
-    
+    """
+    A view to return the bag contents page
+    """
+
     return render(request, 'bag/bag.html')
 
 
@@ -24,16 +26,16 @@ def add_to_bag(request, membership_id):
         messages.success(request, f'Added {membership.name} to your bag')
 
     request.session['bag'] = bag
-    
+
     return redirect(redirect_url)
-    
+
 
 def remove_from_bag(request, membership_id):
     """ Remove memberships from the bag """
     try:
         membership = get_object_or_404(Membership, pk=membership_id)
         bag = request.session.get('bag', {})
-        
+
         bag.pop(membership_id)
 
         request.session['bag'] = bag
@@ -41,4 +43,3 @@ def remove_from_bag(request, membership_id):
 
     except Exception as e:
         return HttpResponse(status=500)
-       
