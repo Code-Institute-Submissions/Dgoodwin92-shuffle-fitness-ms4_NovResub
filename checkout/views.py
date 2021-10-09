@@ -31,7 +31,7 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order_form.save()
-            for membership_id, membership_data in bag.memberships():
+            for membership_id, membership_data in bag.items():
                 try:
                     membership = Membership.objects.get(id=membership_id)
                     if isinstance(membership_data, int):
