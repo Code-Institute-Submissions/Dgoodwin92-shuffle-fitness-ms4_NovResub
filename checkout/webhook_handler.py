@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 
 from .models import Order, OrderLineItem
-from membership.models import Membership
+from memberships.models import Membership
 
 import json
 import time
