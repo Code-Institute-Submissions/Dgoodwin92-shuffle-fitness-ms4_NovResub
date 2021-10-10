@@ -11,11 +11,12 @@ This webpage is for educational purposes and the stripe functionality will only 
     * Any Date or you can use: 04/24
     * Any CVV Number
 
+### Unforunately this is not complete and I have had to submit this site while not being 100% ready. I do apologise for the inconvience for this! I understand that this will be a fail and I will make sure that I work very hard to make it a pass on the potential resubmission date.
+
 ## **Table of Contents**
 * [1.**UX**](#1-ux)
     * [**User Stories**](#user-stories)
     * [**Wireframes**](#wireframes)
-    * [**Structure**](#structure)
     * [**Design**](#design)
 * [2.**Database Design**](#2-database-design)
 * [3.**Features**](#3-features)
@@ -55,7 +56,7 @@ Overview of the UX design including the wireframse which have been created as a 
     * As the business owner, I would like my customers to enjoy using the website.
     * As the business owner, I would like to have access to a admin section.
 
-### Wireframes
+### **Wireframes**
 To create my wireframes I used a website called MockFlow. The JPEG of the wireframes are attached bellow. 
 #### Home/Landing Page
 ![Wireframe Home Image](readme-img/wireframe-img/sf-home.jpg)
@@ -67,6 +68,24 @@ To create my wireframes I used a website called MockFlow. The JPEG of the wirefr
 ![Wireframe Profile Page](readme-img/wireframe-img/sf-profile.jpg)
 #### Checkout Page
 ![Wireframe Checkout Page](readme-img/wireframe-img/sf-checkout.jpg)
+
+### **Design**
+The design of this site will be simplistic, but with images that bring out some life onto the site. There will be little bits of colour, to break up the white and black text. 
+
+The site needs to be a Mobile First design, so that it can work on mobiles, tablets and also laptops and desktop screens. The images, buttons and forms are all kept to a straight edge rather than rounded to give the site a stronger feel.
+
+The navbar will collapse into a dropdown for the small screens, with search functionality.
+
+Within the footer there will be social links and contact info, so that the user can further connect with the site owner. 
+
+Toasts will pop up to give a success message or even a warning message. 
+
+## **Database Design**
+
+
+
+
+
 
 
  
