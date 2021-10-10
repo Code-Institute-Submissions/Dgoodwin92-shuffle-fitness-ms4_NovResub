@@ -28,6 +28,7 @@ I validated some of my Python code  via the website [Pep8 Online Validator]
 
 ## Things to complete
 * CRUD Search works, but need to be able to add, remove and edit.
+* True deployment onto Heroku
 
 ## **Issues I Faced**
 
@@ -38,5 +39,4 @@ I validated some of my Python code  via the website [Pep8 Online Validator]
 * On profile, form to change detials not showing
 * Some css still needing to be completed, especially footer on some pages. 
 
-username = adminfit
-password = Heroku12!
+
