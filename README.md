@@ -72,15 +72,32 @@ To create my wireframes I used a website called MockFlow. The JPEG of the wirefr
 ### **Design**
 The design of this site will be simplistic, but with images that bring out some life onto the site. There will be little bits of colour, to break up the white and black text. 
 
-The site needs to be a Mobile First design, so that it can work on mobiles, tablets and also laptops and desktop screens. The images, buttons and forms are all kept to a straight edge rather than rounded to give the site a stronger feel.
+The colour I have chosen to use just to break up the white background and black text is #8FD0CA, which is a light blue, with a hint of grey. - Image to come -
 
-The navbar will collapse into a dropdown for the small screens, with search functionality.
+#### Font Family
+The font family that I have chosen to use are from google fonts. I have used two fonts throughout my site one for main titles/headers and the other for all other text. 
+    - For titles and headers I used Syncopate with a backup of sans-serif
+    - For all other text I used Raleway also with a backup of sans-serif
 
-Within the footer there will be social links and contact info, so that the user can further connect with the site owner. 
+#### Images
+Images are used throughout this site, all the images have been selected from Unsplash. 
 
-Toasts will pop up to give a success message or even a warning message. 
+There are two main hero images, one is on the landing page and the other is on the membership page. I used the hero images to give the site more life and also to grab the users attention
 
 ## **Database Design**
+
+* Still producing a data schema using [Drawsql](https://drawsql.app)
+
+## **Features**
+* Homepage
+
+* Navbar
+
+* Memberships
+
+* 
+
+
 
 
 

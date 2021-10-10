@@ -1,0 +1,1 @@
+web: gunicorn shuffle_fitness_ms4.wsgi:application
