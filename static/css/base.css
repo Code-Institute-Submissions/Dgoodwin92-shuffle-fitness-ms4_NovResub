@@ -5,6 +5,7 @@ html {
 
 body {
     height: calc(100vh - 164px);
+    overflow-x: hidden;
 }
 
 .container-fluid {

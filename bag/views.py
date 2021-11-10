@@ -21,6 +21,7 @@ def add_to_bag(request, membership_id):
 
     if membership_id in list(bag.keys()):
         bag[membership_id] += quantity
+        messages.success(request, f'Added {membership.name} to your bag')
     else:
         bag[membership_id] = quantity
         messages.success(request, f'Added {membership.name} to your bag')
@@ -39,7 +40,10 @@ def remove_from_bag(request, membership_id):
         bag.pop(membership_id)
 
         request.session['bag'] = bag
+        messages.success(request, f'Removed {membership.name} from your bag')
         return HttpResponse(status=200)
-
+        
     except Exception as e:
+        messages.error(request, f'Error in removing {membership.name} from your bag')
         return HttpResponse(status=500)
+        
