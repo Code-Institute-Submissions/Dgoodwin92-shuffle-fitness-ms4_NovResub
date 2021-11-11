@@ -16,7 +16,6 @@ h1 {
     font-family: 'Syncopate', sans-serif;
 }
 
-
 p {
     font-family: 'Raleway', sans-serif;
 }
@@ -175,6 +174,12 @@ footer {
     height: 2px;
 }
 
+/* ----------------------------------------------- Profile */
+.profile-header {
+    margin: 5px;
+    padding: 10px;
+}
+
 /* ----------------------------------------------- Media Queries */
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
@@ -194,7 +199,7 @@ footer {
       }
   
       .header-container {
-          padding-top: 164px;
+          padding-top: 140px;
       }
   }
 
