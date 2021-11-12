@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.core.mail import send_email
+from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 
@@ -27,7 +27,7 @@ class StripeWH_Handler:
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
-        send_email(
+        send_mail(
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
@@ -58,7 +58,7 @@ class StripeWH_Handler:
         username = intent.metadata.username
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user_username)
-            if save_info
+            if save_info:
                 profile.default_phone_number__iexact=billing_details.phone,
                 profile.default_country__iexact=billing_details.address.country,
                 profile.default_postcode__iexact=billing_details.address.postal_code,
