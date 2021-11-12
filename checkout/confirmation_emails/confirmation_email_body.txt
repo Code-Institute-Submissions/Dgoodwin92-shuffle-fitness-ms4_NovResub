@@ -1,0 +1,15 @@
+Hell0 {{ order.full_name }}!
+
+This is a confirmation of your order at Shuffle Fitness. Your membership info is below:
+
+Order Number: {{ order.order_number}}
+Order Date: {{ order.date }}
+
+Order Total: £{{ order.order_total }}
+
+Your membership will be found on your profile page.
+
+If you have any questions feel free to call us at 01111 123456.
+
+Thank you for you order!
+Shuffle Fitness
