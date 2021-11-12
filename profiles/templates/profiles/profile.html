@@ -22,8 +22,33 @@
     <div class="container">
 <div class="row">
     <div class="col-12 col-lg-6">
-        <p>Memberships</p>
-        {{ orders }}
+        <p>Membership Orders</p>
+        <div class="table-responsive">
+            <table class="table table-sm table-borderless">
+                <thead>
+                    <tr>
+                        <th>Order Number</th>
+                        <th>Order Date</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td>
+                            {{ order.order_number|truncatechars:8 }}
+                        </td>
+                        <td>
+                            {{ order.date }}
+                        </td>
+                        <td>
+                            {{ order.grand_total }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="col-12 col-lg-6">
         <p>Default Billing Information</p>
