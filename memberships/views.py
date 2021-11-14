@@ -42,7 +42,17 @@ def membership_detail(request, membership_id):
 
 def add_membership(request):
     """ Add a Membership to the site """
-    form = MembershipForm()
+    if request.method == "POST":
+        form = MembershipForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added a membership!')
+            return redirect(reverse('add_membership'))
+        else:
+            messages.error(request, 'Failed to add a membership. Please check form is valid.')
+    else:
+        form = MembershipForm()
+        
     template = 'memberships/add_membership.html'
     context = {
         'form': form,
