@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Membership
+from .models import Membership, Category
+from .forms import MembershipForm
 
 
 def all_memberships(request):
@@ -37,3 +38,14 @@ def membership_detail(request, membership_id):
     }
 
     return render(request, 'memberships/membership_detail.html', context)
+
+
+def add_membership(request):
+    """ Add a Membership to the site """
+    form = MembershipForm()
+    template = 'memberships/add_membership.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
