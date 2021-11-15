@@ -161,19 +161,16 @@ footer {
 /* ------------------------------------ bootstrap toasts */
 
 .message-container {
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: fixed;
+    top: 72px;
+    right: 15px;
     z-index: 99999999999;
 }
 
-.custom-toast {
+.toast {
     overflow: visible;
 }
 
-.toast-capper {
-    height: 2px;
-}
 
 /* ----------------------------------------------- Profile */
 .profile-header {
