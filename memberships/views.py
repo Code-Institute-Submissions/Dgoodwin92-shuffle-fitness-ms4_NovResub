@@ -59,3 +59,27 @@ def add_membership(request):
     }
 
     return render(request, template, context)
+
+
+def edit_membership(request, membership_id):
+    """ Edit a membership on the site """
+    membership = get_object_or_404(Membership, pk=membership_id)
+    if request.method == 'POST':
+        form = MembershipForm(request.POST, request.FILES, instance=membership)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated membership!')
+            return redirect(reverse('membership_detail', args=[membership.id]))
+        else:
+            messages.error(request, f'You are editing {membership.name}')
+    else:
+        form = MembershipForm(instance=membership)
+        messages.warning(request, f'You are editing {membership.name}')
+    
+    template = 'memberships/edit_membership.html'
+    context = {
+        'form': form,
+        'membership': membership
+    }
+
+    return render(request, template, context)
