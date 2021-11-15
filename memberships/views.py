@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Membership, Category
 from .forms import MembershipForm
@@ -40,8 +41,13 @@ def membership_detail(request, membership_id):
     return render(request, 'memberships/membership_detail.html', context)
 
 
+@login_required
 def add_membership(request):
     """ Add a Membership to the site """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only site admin can access that area.')
+        return redirect(reverse('home'))
+
     if request.method == "POST":
         form = MembershipForm(request.POST, request.FILES)
         if form.is_valid():
@@ -61,8 +67,13 @@ def add_membership(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_membership(request, membership_id):
     """ Edit a membership on the site """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only site admin can access that area.')
+        return redirect(reverse('home'))
+
     membership = get_object_or_404(Membership, pk=membership_id)
     if request.method == 'POST':
         form = MembershipForm(request.POST, request.FILES, instance=membership)
@@ -85,8 +96,13 @@ def edit_membership(request, membership_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_membership(request, membership_id):
     """ Delete a membership from the site """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only site admin can access that area.')
+        return redirect(reverse('home'))
+        
     membership = get_object_or_404(Membership, pk=membership_id)
     membership.delete()
     messages.success(request, 'Membership deleted!')
