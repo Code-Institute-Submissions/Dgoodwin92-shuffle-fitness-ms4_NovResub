@@ -23,7 +23,12 @@
                 <p>{{ membership.description }}</p>
                 <h5>Price:</h5>
                 <p>£{{ membership.price }}</p>
-                
+                {% if request.user.is_superuser %}
+                <small>
+                    <a href="{% url 'edit_membership' membership.id %}">Edit</a>
+                    <a class="text-danger" href="{% url 'delete_membership' membership.id %}">Delete</a>
+                </small>
+                {% endif %}
             </div>
         </div>
         <div class="col-6 col-md-4">

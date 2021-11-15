@@ -45,9 +45,9 @@ def add_membership(request):
     if request.method == "POST":
         form = MembershipForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            membership = form.save()
             messages.success(request, 'Successfully added a membership!')
-            return redirect(reverse('add_membership'))
+            return redirect(reverse('membership_detail', args=[membership.id]))
         else:
             messages.error(request, 'Failed to add a membership. Please check form is valid.')
     else:
@@ -83,3 +83,11 @@ def edit_membership(request, membership_id):
     }
 
     return render(request, template, context)
+
+
+def delete_membership(request, membership_id):
+    """ Delete a membership from the site """
+    membership = get_object_or_404(Membership, pk=membership_id)
+    membership.delete()
+    messages.success(request, 'Membership deleted!')
+    return redirect(reverse('memberships'))

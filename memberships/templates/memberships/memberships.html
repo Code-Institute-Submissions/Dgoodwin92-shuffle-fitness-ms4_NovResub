@@ -33,6 +33,12 @@
                 <div class="card-body text-center">
                     <p>{{ membership.name }}</p>
                 </div>
+                {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a href="{% url 'edit_membership' membership.id %}">Edit</a>
+                    <a class="text-danger" href="{% url 'delete_membership' membership.id %}">Delete</a>
+                </small>
+                {% endif %}
             </div>
         </div>
         <div class="col-12 d-sm-none"></div>
