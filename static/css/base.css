@@ -6,6 +6,7 @@ html {
 body {
     height: calc(100vh - 164px);
     overflow-x: hidden;
+    background-color: bisque;
 }
 
 .container-fluid {
@@ -205,13 +206,13 @@ h4, h5, p {
   }
 
 @media (max-width: 991px) {
-    .header-container {
-        padding-top: 116px;
-    }
-
     body {
         height: calc(100vh - 116px);
         overflow-x: hidden;
+    }
+    
+    .header-container {
+        padding-top: 116px;
     }
 
     .hero-member-image {
