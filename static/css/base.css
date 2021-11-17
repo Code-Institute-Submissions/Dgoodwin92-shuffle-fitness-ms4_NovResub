@@ -211,6 +211,24 @@ h4, h5, p {
 
     body {
         height: calc(100vh - 116px);
+        overflow-x: hidden;
+    }
+
+    .hero-member-image {
+        height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    h1, .display-2 {
+        font-size: 35px;
+    }
+
+    .membership-img {
+        height: 50vh;
+        width: 40vw;
     }
 }
 
