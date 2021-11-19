@@ -1,18 +1,5 @@
 # shuffle-fitness-ms4
 
-This is a full-stack web application using Django framework alongside HTML, CSS, Python and JavaScript.
-
-This application is for a fictional fitness and nutrition company called Shuffle Fitness. The application will allow users to select an fitness subsrciption that suits them, they will be able to set-up payment using stripe. The user will need to create an account to be able to access paid for material, the user will also be able to rate the material that they have purchased. Some other features that this site will use are confirmation emails, CRUD for the admin to create new content and control the database. 
-
-This webpage is for educational purposes and the stripe functionality will only accept test card details.
-
-* To use the stripe card payment please use the following card information:
-    * Card Number: 4242 4242 4242 4242
-    * Any Date or you can use: 04/24
-    * Any CVV Number
-
-### Unforunately this is not complete and I have had to submit this site while not being 100% ready. I do apologise for the inconvience for this! I understand that this will be a fail and I will make sure that I work very hard to make it a pass on the potential resubmission date.
-
 ## **Table of Contents**
 * [1.**UX**](#1-ux)
     * [**User Stories**](#user-stories)
@@ -26,6 +13,17 @@ This webpage is for educational purposes and the stripe functionality will only 
 * [5.**Deployment**](#5-deployment)
 * [6.**Credits**](#6-credits)
 * [7**Acknowledgements**](#7-acknowledgements)
+
+This is a full-stack web application using Django framework alongside HTML, CSS, Python and JavaScript.
+
+This application is for a fictional fitness and nutrition company called Shuffle Fitness. The application will allow users to select an fitness subsrciption that suits them, they will be able to set-up payment using stripe. The user will need to create an account to be able to access paid for material, the user will also be able to rate the material that they have purchased. Some other features that this site will use are confirmation emails, CRUD for the admin to create new content and control the database. 
+
+This webpage is for educational purposes and the stripe functionality will only accept test card details.
+
+* To use the stripe card payment please use the following card information:
+    * Card Number: 4242 4242 4242 4242
+    * Any Date or you can use: 04/24
+    * Any CVV Number
 
 ## 1. **UX**
 Overview of the UX design including the wireframse which have been created as a foundation for the site.
@@ -113,18 +111,149 @@ There are two main hero images, one is on the landing page and the other is on t
     * Django Allauth is a python package, I have used this, as it has features such as signup, login, logout and password change. These are all needed for the user to access the site correctly. 
     * Once signed up, an email verification will be sent to the user's email to confirm. Once this is confirmed they will have access to their purchased memberships.
 
-* Memberships
+* Emails 
+    * Automatic emails are working in this project and the user will recieve confirmation emails.
 
-* 
+* Footer
+    * The footer will be found at the bottom of every page.
+    * There are social links for the users to further connect with the company.
+
+* The Django Apps
+    * Home
+    * Memberships
+    * Checkout
+    * Bag
+    * Profiles
+
+* Pages on Site 
+    * Home Page
+        This is the base page for all users, once logged in you will be redirected here, also for user who are not logged in this will be where they land.
+    * Membership Page
+        Here all the memberships which are on offer are found. 
+    * Membership Detail Page
+        Once a user clicks on a membership offer they like the look of, they will be taken to another page which holds all the info and price for that chosen membership.
+    * Profile Page
+        Here the user, once logged in will be able to see their past purchase and they are able to correct any personal details if they would like to.
+    * Product Management Page
+        This page can only be accesed by the admin, and here the admin can manage the products.
+    * Login Page
+        This gives the user the ability to login into the site.
+    * Register Page 
+        Here a new user can register their details in order to use the site see their own memberships.
+    * Logout Page
+        The user is able to logout safely and will be redirected to the homepage.
+    * Checkout Page
+        Here the user is able to purchase the item they have chosen. It is a form which uses stripe payments.
+    * Checkout Success Page
+        This page confirms to the user that their order was succesfull.
+
+* Future Features
+    * To have a way that the user can view videos from within their profile, and have access to a full membership worth of material. 
+    * Give the users an ability to talk to a personal trainer in a live chat and for the user to have a chance to speak to a counsellor via a live chat.
+    * Have an option of monthly payments rather than a lump sum. 
 
 ## **Technologies Used**
+#### Languages Used
+  - [HTML5](https://en.wikipedia.org/wiki/HTML5)
+  - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+  - [JavaScript](https://en.wikipedia.org/wiki/Javascript)
+  - [Jquery](https://en.wikipedia.org/wiki/JQuery)
+  - [Python](https://www.python.org/)
 
+#### Frameworks
+
+- [Bootstrap 4](https://validator.w3.org/) library was used to create a responsive site.
+- [Font Awesome](https://fontawesome.com/) Used for social icons and nav icons
+- [Google Fonts](https://fonts.google.com/) I used this for the two chosen fonts. 
+- [Django](https://docs.djangoproject.com/en/3.2/) Django is a high level Python Web Framework
+- [Stripe](https://stripe.com/) Is used to allow users to make payments. 
+- [Heroku](https://www.heroku.com/) Heroku is the cloud platform to deploying the app.
+- [Github](https://github.com/) GitHub is used to host the project files.
+- [GitPod](https://www.gitpod.io/) GitPod, connected to GitHub, hosted the coding space and allowed the project to be committed to the Github repository.
+-[Git](https://git-scm.com/) Git is used to allow for tracking of any changes in the code and for the version control.
+- [AWS](http://aws.amazon.com/) Amazon Web Services (AWS) is the most comprehensive and broadly adopted cloud platform used for S3 service.
+- [Mockflow](https://mockflow.com/) Is a wireframe creator website.
+- [Postgres](https://www.postgresql.org/) - PostgreSQL is one of the world's most popular database management systems.
 ## **Deployment**
+### Heroku Deployment
+  1. Set up local workspace for Heroku
+     - In terminal window of your IDE type: pip3 freeze -- local > requirements.txt. (The file is needed for Heroku to know which filed to install.)
+     - In termial window of your IDE type: python app.py > Procfile (The file is needed for Heroku to know which file is needed as entry point.)
+  2. Set up Heroku: create a Heroku account and create a new app and select your region.
+  3. Deployment method 'Github'
+     - Click on the Connect to GitHub section in the deploy tab in Heroku.
+       - Search your repository to connect with it.
+       - When your repository appears click on connect to connect your repository with the Heroku.
+    - Add PostgreSQL Database
+       - Click the resources tab.
+       - Under Add-ons seach for Heroku Postgres and then click on it when it appears.
+       - Select Plan name Hobby Dev - Free and then click Submit Order Form.
+    - Goto CLI
+       - pip3 install dj_database_url
+       - pip3 install psycopg2-binary
+       - pip3 freeze > requirements.txt
+    - Go to settings.py
+       - import OS
+       - import dj_database_url
+       - Add postgres url and comment sqlite
+    - Migrate data
+    - Dumpdata from sqlite and loaddata to postgresql
+    - pip3 install gunicorn
+    - pip3 freeze > requirements.txt
+    - Create Procfile
+    - Set DISABLE_COLLECTSTATIC=1
+    - In settings.py set ALLOWED_HOSTS
+    - Git add, commit and push.
+    - Git push heroku master
+    - Go to the settings app in Heroku and go to Config Vars. Click on Reveal Config Vars.Enter the variables.
+       - AWS_ACCESS_KEY_ID
+       - AWS_SECRET_ACCESS_KEY
+       - DATABASE_URL
+       - EMAIL_HOST_PASS
+       - EMAIL_HOST_USER
+       - SECRET_KEY
+       - STRIPE_PUBLIC_KEY
+       - STRIPE_SECRET_KEY
+       - STRIPE_WH_SECRET
+       - USE_AWS 
+  4. Automatic deployment: Go to the deploy tab in Heroku and scroll down to Aotmatic deployments. Click on Enable Automatic Deploys. By Manual deploy click on Deploy Branch.
+
+  Heroku will receive the code from Github and host the app using the required packages. Click on Open app in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
+
+- ### Forking
+  If you wish to contribute to this website you can Fork it without affecting the main branch by following the procedure outlined below.
+  1. Go to the GitHub website and log in.
+  2. Locate the [Repository](https://github.com/Dgoodwin92/shuffle-fitness-ms4) used for this project.
+  3. On the right-hand side of the Repository name, you'll see the 'Fork' button. It's located next to the 'Star' and 'Watch' buttons.
+  4. This will create a copy in your personal repository.
+  5. Once you're finished making changes you can locate the 'New Pull Request' button just above the file listing in the original repository.
+
+- ### Cloning 
+  If you wish to clone or download this repository to your local device you can follow the procedure outlined below.
+  1. Go to the GitHub website and log in.
+  2. Locate the [Repository](https://github.com/Dgoodwin92/shuffle-fitness-ms4) used for this project.
+  3. Under the Repository name locate 'Clone or Download' button in green.
+  4. To clone the repository using HTTPS click the link under "Clone with HTTPS".
+  5. Open your Terminal and go to a directory where you want the cloned directory to be copied in.
+  6. Type `Git Clone` and paste the URL you copied from the GitHub.
+  7. To create your local clone press `Enter`
+
+### AWS 
+  1. Create a new Amazon account and connect to the amazon service AWS3. your account will be a cloud based service where the project media and staicfiles will be stored. At first, we locate S3 on amazon service then you create a bucket. While creating the bucket on S3, note that public access must be all switched off to allow access for all users.
+
+  2. Once we've created the bucket, we now can now click on the properties and enable the static Website hosting option, so it can serve the purpose of hosting our static files. You will need to input an index.html. Then we go into the created bucket permissions and click into CORS configuration, this part already have a prefilled default config, you will need to write the default code and save the config.
+
+  3. Then go into the bucket policy to allows access to the contents across all web and inside this you will put some code including arn address displayed at the top of the heading. Then go into amazon IAM to allow identity and access management of our stored files and folder. In the IAM service, add a new group for your application and set the policies to all then it generates a downlaodable zip file containing ID and KEY for you to use in the newly created group. This ID and KEY are to be stored as an environment variable.
+
+  4. This then allows to head back to your terminal window, you will need to  install the settings Boto3 and Django Storages.
+
+  5. The Django Storages is passed into the installed apps in settings and also a custom_storage.py file is created to store credentials in environment variable. Once everything is ready run python3 manage.py collectstatic. This will collect all the static files in the app including any changes that is made, this command has to be run in the development(local) environment each time a change is been made in the static files/folder And your folder and files should display in your AWS S3 BUCKETS.
+
 
 ## **Credits**
 * All the code has been written by Daniel Goodwin
 
-* [Bootstrap 4](https://validator.w3.org/) library was used to create a responsive site.
+* [Bootstrap 4](https://getbootstrap.com/) library was used to create a responsive site.
 
 * To help me along the way, I refered back to the Boutique Ado videos (this was a project from Code Institute).
 
