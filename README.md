@@ -72,35 +72,74 @@ To create my wireframes I used a website called MockFlow. The JPEG of the wirefr
 ### **Design**
 The design of this site will be simplistic, but with images that bring out some life onto the site. There will be little bits of colour, to break up the white and black text. 
 
-The colour I have chosen to use just to break up the white background and black text is #8FD0CA, which is a light blue, with a hint of grey. - Image to come -
+The colour I have chosen to use just to break up the white background and black text is #8FD0CA, which is a light blue, with a hint of grey. ![Color #8FD0CA](readme-img/colour/8FD0CA.png)
+
+The buttons are a mix of black and white, each has the opposite colour for the font.
 
 #### Font Family
 The font family that I have chosen to use are from google fonts. I have used two fonts throughout my site one for main titles/headers and the other for all other text. 
-    - For titles and headers I used Syncopate with a backup of sans-serif
-    - For all other text I used Raleway also with a backup of sans-serif
+    - For titles and headers I used Syncopate with a backup of sans-serif.
+    - For all other text I used Raleway also with a backup of sans-serif.
 
 #### Images
 Images are used throughout this site, all the images have been selected from Unsplash. 
 
-There are two main hero images, one is on the landing page and the other is on the membership page. I used the hero images to give the site more life and also to grab the users attention
+There are two main hero images, one is on the landing page and the other is on the membership page. I used the hero images to give the site more life and also to grab the users attention.
+
+##### Icons
+* Through out this project I have used icons provided by [Font Awesome](https://fontawesome.com/) they are used in my navbar and also within my footer.
 
 ## **Database Design**
-
-* Still producing a data schema using [Drawsql](https://drawsql.app)
+![Data Schema](readme-img/data-schema/data-schema.png)
 
 ## **Features**
-* Homepage
+* Header & Navbar
+    * The Navbar is positioned at the top of each page, and is can be accessed with ease.
+    * The Navbar collaspes when the screen size changes to smaller screens.
+    * At the left of the Navbar you have the company name in bold and caplitised letters, this is to draw attention so that the user knows the site they are visiting.
+* Search
+    * A search box can be found within the Navbar and is accessible on every page of the site. 
+    * The search bar collapses with the rest of the Navbar when on mobile screens
+    * The user can search keywords that link to a membership they wish to find more information about.
+* Toasts
+    * They appear on every page whenever the user makes a certian action that prompts a response. 
+    * These messages will pop up in the right hand corner and can be closed with a click on the button. 
+    * They give feedback to the user on actions such as logging in or out, adding a membership to the bag and also warnings, for example when editing a membership.
+* Buttons & Links
+    * all the buttons have a consistent colour scheme.
+    * Every button will take the user to their desired location.
 
-* Navbar
+* Django Allauth feature
+    * Django Allauth is a python package, I have used this, as it has features such as signup, login, logout and password change. These are all needed for the user to access the site correctly. 
+    * Once signed up, an email verification will be sent to the user's email to confirm. Once this is confirmed they will have access to their purchased memberships.
 
 * Memberships
 
 * 
 
+## **Technologies Used**
 
+## **Deployment**
 
+## **Credits**
+* All the code has been written by Daniel Goodwin
 
+* [Bootstrap 4](https://validator.w3.org/) library was used to create a responsive site.
 
+* To help me along the way, I refered back to the Boutique Ado videos (this was a project from Code Institute).
+
+* To help with the content of the website, I took inspiration from:
+    * [Daily Burn](https://lp.dailyburn.com/byrdie/index.html)
+    * [Obe Fitness](https://obefitness.com/)
+
+* [Unsplash](https://unsplash.com/) was used for all the images on the site.
+* [DrawSQL](https://drawsql.app/) was used to create my Data Schema image.
+* I used [Color-Name](https://www.color-name.com/popular) as a tool to help me pick colours.
+* [Google Fonts](https://fonts.google.com/) was used to choose two fonts for the site.
+
+## **Acknowledgements**
+* A huge shout out to the Code Institue tutors, as without them I never would have come close to finishing this project. These guys are amazing!
+* A big thank you to my wife, for pushing me and reminding me that I can complete this. 
 
 
 
