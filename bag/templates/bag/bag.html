@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -27,29 +27,33 @@
                             <th scope="col"></th>
                             <th scope="col">Price</th>
                             <th scope="col"></th>
-                          </tr>
+                        </tr>
                     </thead>
 
                     {% for membership in bag_items %}
-                        <tr>
-                            <td class="p-3 w-25">
-                                <img class="img-fluid" src="{{ MEDIA_URL }}{{ membership.membership.image }}" width="76px" height="66px">
-                            </td>
-                            <td class="py-3">
-                                <p>{{ membership.membership.name }}</p>
-                                <p class="small text-muted">{{ membership.membership.membership_id }}</p>
-                            </td>
-                            <td class="py-3">
-                                <p>£{{ membership.membership.price }}</p>
-                            </td>
-                            <td class="py-3">
-                                <form class="form remove-form" method="POST" action="{% url 'remove_from_bag' membership.membership_id %}">
-                                    {% csrf_token %}
-                                    <input type="hidden" class="form-control qty_input id_qty_{{ membership.id }}" type="number" name="quantity" value="1" data-membership_id="{{ membership.id }}">
-                                </form>
-                                <a class="remove-item text-danger float-right" id="remove_{{ membership.membership_id }}" data-membership_id="{ {membership.membership_id }}"><small>Remove Item</small></a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td class="p-3 w-25">
+                            <img class="img-fluid" src="{{ MEDIA_URL }}{{ membership.membership.image }}" width="76px"
+                                height="66px">
+                        </td>
+                        <td class="py-3">
+                            <p>{{ membership.membership.name }}</p>
+                            <p class="small text-muted">{{ membership.membership.membership_id }}</p>
+                        </td>
+                        <td class="py-3">
+                            <p>£{{ membership.membership.price }}</p>
+                        </td>
+                        <td class="py-3">
+                            <form class="form remove-form" method="POST"
+                                action="{% url 'remove_from_bag' membership.membership_id %}">
+                                {% csrf_token %}
+                                <input type="hidden" class="form-control qty_input id_qty_{{ membership.id }}"
+                                    type="number" name="quantity" value="1" data-membership_id="{{ membership.id }}">
+                            </form>
+                            <a class="remove-item text-danger float-right" id="remove_{{ membership.membership_id }}"
+                                data-membership_id="{ {membership.membership_id }}"><small>Remove Item</small></a>
+                        </td>
+                    </tr>
                     {% endfor %}
                     <tr>
                         <td>
@@ -71,28 +75,28 @@
                     </tr>
                 </table>
             </div>
-                {% else %}
-                <p>Your bag is empty</p>
-                <a href="{% url 'memberships' %}" class="btn btn-dark">Keep Shopping</a>
-                {% endif %}
-            </div>
+            {% else %}
+            <p>Your bag is empty</p>
+            <a href="{% url 'memberships' %}" class="btn btn-dark">Keep Shopping</a>
+            {% endif %}
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
-    $('.remove-item').click(function(e) {
+    $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var membershipId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${membershipId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
+        var data = { 'csrfmiddlewaretoken': csrfToken };
 
         $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+            .done(function () {
+                location.reload();
+            });
     })
 </script>
 {% endblock %}

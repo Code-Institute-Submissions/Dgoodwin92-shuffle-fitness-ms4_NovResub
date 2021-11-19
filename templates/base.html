@@ -1,6 +1,7 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
+
 <head>
   {% block meta %}
   <!-- Required meta tags -->
@@ -14,7 +15,8 @@
 
   {% block corecss %}
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,9 +29,14 @@
   {% endblock %}
 
   {% block corejs %}
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/59091d9539.js" crossorigin="anonymous"></script>
   <!-- Stripe -->
   <script src="https://js.stripe.com/v3/"></script>
@@ -40,11 +47,13 @@
 
   <title>Shuffle Fitness {% block extra_title %}{% endblock %}</title>
 </head>
+
 <body>
   <div class="wrapper">
-  <header class="container-fluid fixed-top">
+    <header class="container-fluid fixed-top">
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav" aria-controls="topnav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav" aria-controls="topnav"
+          aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topnav">
@@ -55,13 +64,14 @@
             <li class="list-inline-item">
               <a class="nav-link" href="{% url 'memberships' %}">
                 <div class="text-center">
-                <div><i class="fas fa-dumbbell fa-lg"></i></div>
-                <p class="my-0">Memberships</p>
+                  <div><i class="fas fa-dumbbell fa-lg"></i></div>
+                  <p class="my-0">Memberships</p>
                 </div>
               </a>
             </li>
             <li class="list-inline-item dropdown">
-              <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <div class="text-center">
                   <div><i class="fas fa-user fa-lg"></i></div>
                   <p class="my-0">My Account</p>
@@ -81,24 +91,26 @@
               </div>
             </li>
             <li class="list-inline-item">
-              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                href="{% url 'view_bag' %}">
                 <div class="text-center">
-                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                    <p class="my-0">
-                        {% if grand_total %}
-                            £{{ grand_total|floatformat:2 }}
-                        {% else %}
-                            £0.00
-                        {% endif %}
-                    </p>
+                  <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                  <p class="my-0">
+                    {% if grand_total %}
+                    £{{ grand_total|floatformat:2 }}
+                    {% else %}
+                    £0.00
+                    {% endif %}
+                  </p>
                 </div>
-            </a>
+              </a>
             </li>
           </ul>
           <div class="col-lg-4 my-auto py-1 py-lg-0">
             <form method="GET" action="{% url 'memberships' %}">
               <div class="input-group w-100">
-                <input class="form-control border border-blue rounded-0" type="text" name="q" placeholder="Search our site">
+                <input class="form-control border border-blue rounded-0" type="text" name="q"
+                  placeholder="Search our site">
                 <div class="input-group-append">
                   <button class="form-control btn border border-blue rounded-0" type="submit">
                     <span class="icon">
@@ -111,31 +123,31 @@
           </div>
         </div>
       </nav>
-  </header>
-  {% block page_header %}
+    </header>
+    {% block page_header %}
 
-  {% endblock %}
+    {% endblock %}
 
-  {% block content %}
+    {% block content %}
 
-  {% endblock %}
-</div>
-{% if messages %}
-    <div class="message-container">
-      {% for message in messages %}
-        {% with message.level as level %}
-          {% if level == 40 %}
-            {% include 'includes/toasts/toast_error.html' %}
-          {% elif level == 30 %}
-            {% include 'includes/toasts/toast_warning.html' %}
-          {% else %}
-            {% include 'includes/toasts/toast_success.html' %}
-          {% endif %}
-        {% endwith %}
-      {% endfor %}
-    </div>
-{% endif %}
-<footer class="footer">
+    {% endblock %}
+  </div>
+  {% if messages %}
+  <div class="message-container">
+    {% for message in messages %}
+    {% with message.level as level %}
+    {% if level == 40 %}
+    {% include 'includes/toasts/toast_error.html' %}
+    {% elif level == 30 %}
+    {% include 'includes/toasts/toast_warning.html' %}
+    {% else %}
+    {% include 'includes/toasts/toast_success.html' %}
+    {% endif %}
+    {% endwith %}
+    {% endfor %}
+  </div>
+  {% endif %}
+  <footer class="footer">
     <div class="row" id="footer-mobile">
       <div class="col-12 col-md-6 footer-contact flex-center">
         <h3>Contact Us</h3>
@@ -148,21 +160,22 @@
           <li class="list-inline-item">
             <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
               <i class="fab fa-instagram"></i>
-                <span class="sr-only">Instagram.</span></a>
+              <span class="sr-only">Instagram.</span></a>
           </li>
           <li class="list-inline-item">
             <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer">
               <i class="fab fa-youtube"></i>
-                <span class="sr-only">Youtube.</span></a>
+              <span class="sr-only">Youtube.</span></a>
           </li>
         </ul>
       </div>
     </div>
-</footer>
+  </footer>
   {% block postloadjs %}
   <script type="text/javascript">
-      $('.toast').toast('show');
+    $('.toast').toast('show');
   </script>
   {% endblock %}
 </body>
+
 </html>

@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -20,35 +20,36 @@
             <h2>Checkout</h2>
             <hr>
         </div>
-        </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            {% for membership in bag_items %}
-        <div class="col">
-        <div class="card" style="width: 18rem; height: 20rem;">
-            {% if membership.membership.image %}
-                    <img class="card-img-top" src="{{ MEDIA_URL }}{{ membership.membership.image }}" alt="{{ membership.name }}">
-                    {% else %}
-                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ membership.name }}">
-                    {% endif %}
-            <div class="card-body">
-                <h5 class="card-title">{{ membership.membership.name }}</h5>
-                <p>{{ membership.quantity }}</p>
-              <p class="card-text">£{{ membership.membership.price }}</p>
-              <p class="small text-muted">{{ membership.membership.membership_id }}</p>
-            </div>
-          </div>
-        
     </div>
-    {% endfor %}
-</div>
-        <hr>
-        <div class="row">
-            <div class="col-3">
-                <p class="my-0">Grand Total: <strong>£{{ grand_total | floatformat:2 }}</strong></p>
-                <p class="my-0"></p>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for membership in bag_items %}
+        <div class="col">
+            <div class="card" style="width: 18rem; height: 20rem;">
+                {% if membership.membership.image %}
+                <img class="card-img-top" src="{{ MEDIA_URL }}{{ membership.membership.image }}"
+                    alt="{{ membership.name }}">
+                {% else %}
+                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ membership.name }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ membership.membership.name }}</h5>
+                    <p>{{ membership.quantity }}</p>
+                    <p class="card-text">£{{ membership.membership.price }}</p>
+                    <p class="small text-muted">{{ membership.membership.membership_id }}</p>
+                </div>
             </div>
+
         </div>
-        <div class="row justify-content-center">
+        {% endfor %}
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-3">
+            <p class="my-0">Grand Total: <strong>£{{ grand_total | floatformat:2 }}</strong></p>
+            <p class="my-0"></p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
         <div class="col-12 col-lg-6">
             <p class="text-muted">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -69,13 +70,12 @@
                     {{ order_form.country | as_crispy_field }}
                     <div class="form-check form-check-inline float-right mr-0">
                         {% if user.is_authenticated %}
-                            <label class="form-check-label" for="id-save-info">Save this information to my profile</label>
-                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                        <label class="form-check-label" for="id-save-info">Save this information to my profile</label>
+                        <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info"
+                            checked>
                         {% else %}
-                            <label class="form-check-label" for="id-save-info">
-                                <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
-                                <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
-                            </label>
+                        <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                        <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
                         {% endif %}
                     </div>
                 </fieldset>
@@ -111,14 +111,14 @@
             </form>
         </div>
     </div>
-    </div>
+</div>
 
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 
 {% endblock %}

@@ -3,49 +3,57 @@
 
 {% block content %}
 <div class="hero-image">
-    <div class="hero-contents">
-    
-    </div>
+  <div class="hero-contents">
+
+  </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col about-us">
-            <h2 class="about-title">About us</h2>
-            <p>Here at Shuffle Fitness we are massively passionate about individuals finding fitness and health. We want to see people set free from stress and low self-esteem, so we have created plans which not only look at the physical aspects of health but also the nutritional and mental side of life.</p>
-            <p>On this website you will find great ways to build yourself into a stronger person, who feels great and self assured.</p>
-            <p>Sign up or sign in, to this site to gain access to the membership materials that you purchase.</p>
-        </div>
+  <div class="row">
+    <div class="col about-us">
+      <h2 class="about-title">About us</h2>
+      <p>Here at Shuffle Fitness we are massively passionate about individuals finding fitness and health. We want to
+        see people set free from stress and low self-esteem, so we have created plans which not only look at the
+        physical aspects of health but also the nutritional and mental side of life.</p>
+      <p>On this website you will find great ways to build yourself into a stronger person, who feels great and self
+        assured.</p>
+      <p>Sign up or sign in, to this site to gain access to the membership materials that you purchase.</p>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="card-group">
-                <div class="card">
-                  <img class="card-img-top" src="{{ MEDIA_URL }}fitness-img.jpg" alt="Card image cap">
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Fitness</h5>
-                    <p class="card-text">We offer a fantastic range of fitness content which will help you reach your personal fitness goals. We offer fitness plans for your Cardio, Upper Body and a plan for your Legs.</p>
-                    <a href="{% url 'memberships' %}" class="btn btn-dark">Click here to learn more</a>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="{{ MEDIA_URL }}nutrition-img.jpg" alt="Card image cap">
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Nutrition</h5>
-                    <p class="card-text">Our nutrition plans are incredible and will help you reach the peak healthiness that you crave. We have two fantastic plans to pick from, one of these is a vegan plan and the other is a vegetarian plan.</p>
-                    <a href="{% url 'memberships' %}" class="btn btn-dark">Click here to learn more</a>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="{{ MEDIA_URL }}brain-img.jpg" alt="Card image cap">
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Mental</h5>
-                    <p class="card-text">Not only does your body need to be in a good physical shape, and feel nourished it also needs you to have a healthy and strong mind. We offer two plans which will help you achieve mental strength.</p>
-                    <a href="{% url 'memberships' %}" class="btn btn-dark">Click here to learn more</a>
-                  </div>
-                </div>
-              </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card-group">
+        <div class="card">
+          <img class="card-img-top" src="{{ MEDIA_URL }}fitness-img.jpg" alt="Card image cap">
+          <div class="card-body text-center">
+            <h5 class="card-title">Fitness</h5>
+            <p class="card-text">We offer a fantastic range of fitness content which will help you reach your personal
+              fitness goals. We offer fitness plans for your Cardio, Upper Body and a plan for your Legs.</p>
+            <a href="{% url 'memberships' %}" class="btn btn-dark">Click here to learn more</a>
+          </div>
         </div>
+        <div class="card">
+          <img class="card-img-top" src="{{ MEDIA_URL }}nutrition-img.jpg" alt="Card image cap">
+          <div class="card-body text-center">
+            <h5 class="card-title">Nutrition</h5>
+            <p class="card-text">Our nutrition plans are incredible and will help you reach the peak healthiness that
+              you crave. We have two fantastic plans to pick from, one of these is a vegan plan and the other is a
+              vegetarian plan.</p>
+            <a href="{% url 'memberships' %}" class="btn btn-dark">Click here to learn more</a>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{{ MEDIA_URL }}brain-img.jpg" alt="Card image cap">
+          <div class="card-body text-center">
+            <h5 class="card-title">Mental</h5>
+            <p class="card-text">Not only does your body need to be in a good physical shape, and feel nourished it also
+              needs you to have a healthy and strong mind. We offer two plans which will help you achieve mental
+              strength.</p>
+            <a href="{% url 'memberships' %}" class="btn btn-dark">Click here to learn more</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 {% endblock %}
 {% block postloadjs %}

@@ -13,11 +13,7 @@
 
 ### W3 HTML
 To  my HTML, I used [W3 Validation Service](https://validator.w3.org/)
-* There is one error within the checkout.html, if a user is not logged in this error will appear 
-    ![Checkout Error](readme-img/testing/html-testing1.png)
-    - However if you are logged in there is no error. 
-    ![Checkout logged in](readme-img/testing/html-testing2.png)
-* There is a warning on every page about the javascript, however I do not see this as an issue.
+* There is no errors within my HTML code, however there is a warning throughout, but I am not to concerned about this warning.
     ![JavaScript Warning](readme-img/testing/html-testing3.png)
 
 ### W3 CSS

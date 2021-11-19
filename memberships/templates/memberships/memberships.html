@@ -17,37 +17,38 @@
         <hr>
     </div>
     <div class="container">
-    <div class="row" id="membership-card">
-        {% for membership in memberships %}
-        <div class="col-lg-4 col-md-6">
-            <div class="card mobile-card">
-                {% if membership.image %}
-                <a href="{% url 'membership_detail' membership.id %}">
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ membership.image }}"
-                        alt="{{ membership.name }}">
-                </a>
-                {% else %}
-                <a href="{% url 'membership_detail' membership.id %}">
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ membership.name }}">
-                </a>
-                {% endif %}
-                <div class="card-body text-center">
-                    <p>{{ membership.name }}</p>
+        <div class="row" id="membership-card">
+            {% for membership in memberships %}
+            <div class="col-lg-4 col-md-6">
+                <div class="card mobile-card">
+                    {% if membership.image %}
+                    <a href="{% url 'membership_detail' membership.id %}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ membership.image }}"
+                            alt="{{ membership.name }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'membership_detail' membership.id %}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg"
+                            alt="{{ membership.name }}">
+                    </a>
+                    {% endif %}
+                    <div class="card-body text-center">
+                        <p>{{ membership.name }}</p>
+                    </div>
+                    {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a href="{% url 'edit_membership' membership.id %}">Edit</a>
+                        <a class="text-danger" href="{% url 'delete_membership' membership.id %}">Delete</a>
+                    </small>
+                    {% endif %}
                 </div>
-                {% if request.user.is_superuser %}
-                <small class="ml-3">
-                    <a href="{% url 'edit_membership' membership.id %}">Edit</a>
-                    <a class="text-danger" href="{% url 'delete_membership' membership.id %}">Delete</a>
-                </small>
-                {% endif %}
             </div>
+            <div class="col-12 d-sm-none"></div>
+            {% if forloop.counter|divisibleby:2 %}
+            <div class="col-12 d-none d-sm-block d-md-block d-lg-none"></div>
+            {% endif %}
+            {% endfor %}
         </div>
-        <div class="col-12 d-sm-none"></div>
-        {% if forloop.counter|divisibleby:2 %}
-        <div class="col-12 d-none d-sm-block d-md-block d-lg-none"></div>
-        {% endif %}
-        {% endfor %}
     </div>
-</div>
 </div>
 {% endblock %}
