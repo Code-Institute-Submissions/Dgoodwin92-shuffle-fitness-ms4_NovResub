@@ -267,6 +267,9 @@ There are two main hero images, one is on the landing page and the other is on t
 * [DrawSQL](https://drawsql.app/) was used to create my Data Schema image.
 * I used [Color-Name](https://www.color-name.com/popular) as a tool to help me pick colours.
 * [Google Fonts](https://fonts.google.com/) was used to choose two fonts for the site.
+* [Stackoverflow](https://stackoverflow.com/) Was used to help troubleshoot some issues.
+* [Slack](https://slack.com/intl/en-gb/) Came in handy when I needed to ask the community a question.
+* [CSS Tricks](https://css-tricks.com/) was very helpful with some design issues that I faced.
 
 ## **Acknowledgements**
 * A huge shout out to the Code Institue tutors, as without them I never would have come close to finishing this project. These guys are amazing!
