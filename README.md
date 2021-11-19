@@ -1,5 +1,7 @@
 # shuffle-fitness-ms4
 
+![Am I repsonsive image](readme-img/wireframe-img/am-i-responsive.png)
+
 ## **Table of Contents**
 * [1.**UX**](#1-ux)
     * [**User Stories**](#user-stories)
