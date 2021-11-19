@@ -9,17 +9,18 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col text-center">
             <h3 class="membership-title" id="fitness-landing">Fitness, Nutrition and Mental Strength</h3>
         </div>
         <hr>
     </div>
-    <div class="row">
+    <div class="container">
+    <div class="row" id="membership-card">
         {% for membership in memberships %}
-        <div class="col-sm-6 col-md-6 col-lg-4">
-            <div class="card">
+        <div class="col-lg-4 col-md-6">
+            <div class="card mobile-card">
                 {% if membership.image %}
                 <a href="{% url 'membership_detail' membership.id %}">
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ membership.image }}"
@@ -47,5 +48,6 @@
         {% endif %}
         {% endfor %}
     </div>
+</div>
 </div>
 {% endblock %}

@@ -1,17 +1,21 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
-from django.views.decorators.http import require_POST
-from django.contrib import messages
-from django.conf import settings
-
+import json
+import stripe
+from bag.contexts import bag_contents
+from profiles.models import UserProfile
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-from memberships.models import Membership
 from profiles.forms import UserProfileForm
-from profiles.models import UserProfile
-from bag.contexts import bag_contents
-
-import stripe
-import json
+from memberships.models import Membership
+from django.conf import settings
+from django.contrib import messages
+from django.views.decorators.http import require_POST
+from django.shortcuts import (
+    render,
+    redirect,
+    reverse,
+    get_object_or_404,
+    HttpResponse,
+)
 
 
 @require_POST
@@ -51,7 +55,7 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order=order_form.save(commit=False)
+            order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
@@ -68,7 +72,8 @@ def checkout(request):
                         order_line_item.save()
                 except Membership.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag was not found in our database."
+                        "One of the products in your bag was not\
+                         found in our database."
                         "Please call us for assistance!")
                     )
                     order.delete()
@@ -82,7 +87,8 @@ def checkout(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request, "There's nothing in\
+                                     your bag at the moment")
             return redirect(reverse('memberships'))
 
         current_bag = bag_contents(request)

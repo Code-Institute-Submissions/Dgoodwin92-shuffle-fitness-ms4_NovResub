@@ -16,9 +16,11 @@ def all_memberships(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You did not enter any search criteria!")
+                messages.error(request, "You did not enter any\
+                                         search criteria!")
                 return redirect(reverse('memberships'))
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(description__icontains=query
+                                                   )
             memberships = memberships.filter(queries)
 
     context = {
@@ -55,10 +57,10 @@ def add_membership(request):
             messages.success(request, 'Successfully added a membership!')
             return redirect(reverse('membership_detail', args=[membership.id]))
         else:
-            messages.error(request, 'Failed to add a membership. Please check form is valid.')
+            messages.error(request, 'Failed to add a membership. Please check\
+                                     form is valid.')
     else:
         form = MembershipForm()
-        
     template = 'memberships/add_membership.html'
     context = {
         'form': form,
@@ -86,7 +88,6 @@ def edit_membership(request, membership_id):
     else:
         form = MembershipForm(instance=membership)
         messages.warning(request, f'You are editing {membership.name}')
-    
     template = 'memberships/edit_membership.html'
     context = {
         'form': form,
@@ -102,7 +103,6 @@ def delete_membership(request, membership_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only site admin can access that area.')
         return redirect(reverse('home'))
-        
     membership = get_object_or_404(Membership, pk=membership_id)
     membership.delete()
     messages.success(request, 'Membership deleted!')

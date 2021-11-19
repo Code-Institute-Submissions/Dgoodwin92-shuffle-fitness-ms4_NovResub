@@ -5,8 +5,11 @@ from . import views
 
 urlpatterns = [
     path('', views.all_memberships, name='memberships'),
-    path('<int:membership_id>/', views.membership_detail, name='membership_detail'),
+    path('<int:membership_id>/', views.membership_detail,
+         name='membership_detail'),
     path('add/', views.add_membership, name='add_membership'),
-    path('edit/<int:membership_id>/', views.edit_membership, name='edit_membership'),
-    path('delete/<int:membership_id>/', views.delete_membership, name='delete_membership'),
+    path('edit/<int:membership_id>/', views.edit_membership,
+         name='edit_membership'),
+    path('delete/<int:membership_id>/', views.delete_membership,
+         name='delete_membership'),
 ]

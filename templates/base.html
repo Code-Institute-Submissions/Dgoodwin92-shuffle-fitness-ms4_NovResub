@@ -41,7 +41,8 @@
   <title>Shuffle Fitness {% block extra_title %}{% endblock %}</title>
 </head>
 <body>
-  <header class="container-fluid fixed-top ">
+  <div class="wrapper">
+  <header class="container-fluid fixed-top">
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav" aria-controls="topnav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -111,7 +112,16 @@
         </div>
       </nav>
   </header>
-  {% if messages %}
+  {% block page_header %}
+
+  {% endblock %}
+
+  {% block content %}
+
+  {% endblock %}
+<div class="push"></div>
+</div>
+{% if messages %}
     <div class="message-container">
       {% for message in messages %}
         {% with message.level as level %}
@@ -126,18 +136,8 @@
       {% endfor %}
     </div>
 {% endif %}
-<main>
-
-  {% block page_header %}
-
-  {% endblock %}
-
-  {% block content %}
-
-  {% endblock %}
-</main>
 <footer class="footer">
-    <div class="row">
+    <div class="row" id="footer-mobile">
       <div class="col-12 col-md-6 footer-contact flex-center">
         <h3>Contact Us</h3>
         <p><i class="fas fa-at"></i> shufffit@gmail.com</p>
@@ -166,5 +166,4 @@
   </script>
   {% endblock %}
 </body>
-
 </html>

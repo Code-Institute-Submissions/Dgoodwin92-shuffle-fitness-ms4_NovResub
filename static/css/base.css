@@ -8,6 +8,11 @@ body {
     overflow-x: hidden;
 }
 
+.wrapper {
+    min-height: 100%;
+    margin-bottom: 50px;
+  }
+
 .container-fluid {
     padding: 0;
 }
@@ -19,6 +24,11 @@ h1, h2, h3 {
 
 h4, h5, p {
     font-family: 'Raleway', sans-serif;
+}
+
+.footer,
+.push {
+  height: -50px;
 }
 
 /* ------------------------------------------------- Nav Bar & Logo Font */
@@ -149,7 +159,6 @@ h4, h5, p {
 
 /* ----------------------------------------------- Footer */
 .footer {
-    
     width: 100%;
     bottom: 0;
     background-color: #8FD0CA;
@@ -208,11 +217,72 @@ h4, h5, p {
 @media (max-width: 991px) {
     body {
         height: calc(100vh - 116px);
-        overflow-x: hidden;
+    }
+
+    .container-fluid {
+        width: 100vw;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .logo-font {
+        font-size: 20px;
+    }
+
+    .social-link {
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 10px;
+    }
+
+    h3 {
+        font-size: 20px;
     }
     
     .header-container {
         padding-top: 116px;
+    }
+
+    .about-title {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 10px;
+    }
+
+    .btn {
+        font-size: 10px;
+    }
+
+    .card-group {
+        align-items: center;
+    }
+
+    #membership-card {
+        display: grid;
+        margin-right: 0;
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .mobile-card {
+        height: 255px !important;
+    }
+
+    .card {
+        width: 200px;
+        height: 370px;
+    }
+
+    .hero-image {
+        height: 300px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
     }
 
     .hero-member-image {
@@ -239,6 +309,10 @@ h4, h5, p {
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
+    }
+
+    #footer-mobile {
+        margin: 0;
     }
 }
 
